@@ -2,7 +2,6 @@ package exception.ex0;
 
 public class NetworkClientV0 {
 
-
     private final String address; // 접근할 외부 서버의 주소
 
     public NetworkClientV0(String address) {
@@ -22,6 +21,4 @@ public class NetworkClientV0 {
     public void disconnect(){
         System.out.println(this.address + " 서버에 연결 해제");
     }
-
-
 }
