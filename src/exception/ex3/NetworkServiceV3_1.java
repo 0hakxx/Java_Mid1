@@ -10,9 +10,10 @@ public class NetworkServiceV3_1 {
         NetworkClientV3 client = new NetworkClientV3(address);
         client.initError(data); //추가
 
-        try {
+        try { // 정상 흐름
             client.connect();
             client.send(data);
+            // 문제 상황 발생
         } catch (ConnectExceptionV3 e) {
             System.out.println("[연결 오류] 주소: " + e.getAddress() + ", 메시지: " + e.getMessage());
         } catch (SendExceptionV3 e) {
@@ -20,6 +21,5 @@ public class NetworkServiceV3_1 {
         } finally {
             client.disconnect();
         }
-
     }
 }
